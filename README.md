@@ -1,5 +1,5 @@
-# Org README
-see org README [here](README1.md)
+# Orginele README
+see org [README](README2.md)
 
 # Pictures
 zet je foto's in data/known_people en data/images
