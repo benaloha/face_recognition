@@ -7,7 +7,7 @@ zet je foto's in data/known_people en data/images
 # Howto CPU
 docker build -t face_recognition:cpu .
 
-docker run -it --rm -v /home/ben/projects/face_recognition/data:/data face_recognition:cpu face_recognition /data/known_people /data/images/ --show-distance True --tolerance 0.5 --cpus -1
+docker run -it --rm -v /home/ben/projects/face_recognition/data:/data face_recognition:cpu face_recognition /data/known_people /data/images/ --show-distance True --tolerance 0.55 --cpus -1 | grep -v None | sort
 
 # Howto GPU
 
@@ -40,7 +40,7 @@ This system supports the C.UTF-8 locale which is recommended. You might be able 
 docker run -it --gpus all --rm -v /home/ben/projects/face_recognition/data:/data face_recognition:gpu bash
 
 Dan in container en die exports doen:
-face_recognition /data/known_people /data/images/ --show-distance True --tolerance 0.5
+face_recognition /data/known_people /data/images/ --show-distance True --tolerance 0.55
 
 Met dit cmd zie je dan dat ie echt GPU gebruikt ipv CPU  
 $nvidia-smi 
